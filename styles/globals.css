@@ -9,7 +9,7 @@ body {
   margin: 0;
 }
 
-/* @layer components {
+@layer components {
 .wallet-button {
     @apply border-2 rounded-3xl border-[rgba(170,114,206,0.12)] p-3 hover:border-blue-primary duration-300
 }
@@ -17,7 +17,7 @@ body {
     .input-border{
       @apply block rounded-lg bg-transparent border-2 h-12 text-white p-2 border-[rgba(170,114,206,0.12)] focus:text-white focus:border focus:border-blue-primary focus:outline-none
     }
-  } */
+  }
   
   .mymodal {
     position: fixed;
