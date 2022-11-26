@@ -3,8 +3,10 @@ import {
     createClient,
     defaultChains,
     configureChains,
-    useDisconnect
+    useDisconnect,
+    Chain
   } from 'wagmi'
+
   
   import { alchemyProvider } from 'wagmi/providers/alchemy'
   import { publicProvider } from 'wagmi/providers/public'
@@ -13,10 +15,27 @@ import {
   import { InjectedConnector } from 'wagmi/connectors/injected'
   import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
   import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+  // require("dotenv").config({ path: ".env" });
   
-  // Configure chains & providers with the Alchemy provider.
-  // Two popular providers are Alchemy (alchemy.com) and Infura (infura.io)
-  const { chains, provider, webSocketProvider } = configureChains(defaultChains, [
+  const avalancheChain = {
+    id: 80_001,
+    name: 'Mumbai',
+    network: 'mumbai',
+    nativeCurrency: {
+      decimals: 18,
+      name: 'matic',
+      symbol: 'MATIC',
+    },
+    rpcUrls: {
+      default: 'https://matic-mumbai.chainstacklabs.com',
+    },
+    blockExplorers: {
+      default: { name: 'SnowTrace', url: 'https://mumbai.polygonscan.com/' },
+    },
+    testnet: true,
+  }
+
+  const { chains, provider, webSocketProvider } = configureChains([avalancheChain], [
     alchemyProvider({ apiKey: "k2FoR-gXCIDxv56ryt8v3fYbC_V-uOT5" }),
     publicProvider(),
   ])
