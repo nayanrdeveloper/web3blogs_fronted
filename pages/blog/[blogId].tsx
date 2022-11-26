@@ -89,7 +89,7 @@ function blogId() {
               {singleBlogData.category}
             </span>
             <span className="text-[#dedede] flex items-center gap-2">
-              <BiTime />2 hours ago
+              <BiTime />1 hours ago
             </span>
           </div>
           <p>
