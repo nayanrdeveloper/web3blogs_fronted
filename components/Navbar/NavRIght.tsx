@@ -4,6 +4,7 @@ import { useAccount, useConnect, useEnsName, useDisconnect } from "wagmi";
 import { MetaMaskConnector } from "wagmi/connectors/metaMask";
 // import { shortAddress } from "../../utils/shortenAddress";
 import { ToastContainer, toast } from "react-toastify";
+import shortAddress from "../../utils/shortenAddress"
 
 function NavRIght() {
   const [openModal, setOpenModal] = useState(false);
@@ -44,7 +45,7 @@ function NavRIght() {
       <div className="flex gap-2 items-center">
         {isConnected ? (
           <div className="flex gap-2 items-center">
-            <span className="p-2 wallet-button">{address}</span>
+            <span className="p-2 wallet-button">{shortAddress(address)}</span>
             <button
               onClick={() => disconnect()}
               className="wallet-button flex items-center gap-2 relative"
